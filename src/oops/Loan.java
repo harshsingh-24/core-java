@@ -1,66 +1,66 @@
-package oops;
+package oops2;
 
 import java.util.Date;
 
 public class Loan {
-	
-	// Data fields (properties), actions
-	// annualInterestRate, numberOfYears, loanAmount, loanDate
+
+	// Data fields - loanAmount, numberOfYears, Date, interestRate
 	private double annualInterestRate;
 	private int numberOfYears;
 	private double loanAmount;
 	private Date loanDate;
 	
-	/** Default Constructor */
+	// Constructors
+	/**
+	 * Default Constructor
+	 */
 	public Loan() {
 		this(2.5, 1, 1000);
 	}
 	
+	
 	/**
-	 * Construct a loan object with specified annual interest rate,
+	 * Constructing a loan object with specified interest rate, 
 	 * number of years and loan amount
 	 */
 	public Loan(double annualInterestRate, int numberOfYears, double loanAmount) {
 		this.annualInterestRate = annualInterestRate;
 		this.numberOfYears = numberOfYears;
 		this.loanAmount = loanAmount;
-		loanDate = new Date();
+		this.loanDate = new Date();
 	}
-	
-	// Behaviour of class is defined by methods
-	
-	// Getters and setters for annualInterestRate, numberOfYears, loanAmount
-	// Getters for loanDate
 
+	// Getters and Setters 
 	public double getAnnualInterestRate() {
 		return annualInterestRate;
 	}
+
 
 	public void setAnnualInterestRate(double annualInterestRate) {
 		this.annualInterestRate = annualInterestRate;
 	}
 
-	public int getNumberOfYears() {
-		return numberOfYears;
-	}
-
-	public void setNumberOfYears(int numberOfYears) {
-		this.numberOfYears = numberOfYears;
-	}
 
 	public double getLoanAmount() {
 		return loanAmount;
 	}
 
+
 	public void setLoanAmount(double loanAmount) {
 		this.loanAmount = loanAmount;
 	}
 
+
+	public int getNumberOfYears() {
+		return numberOfYears;
+	}
+
+
 	public Date getLoanDate() {
 		return loanDate;
 	}
-	
-	// Methods and Behaviours
+
+	// Methods
 	/** Find monthly payment */
 	public double getMonthlyPayment() {
 		double monthlyInterestRate = annualInterestRate / 1200;
@@ -79,5 +79,5 @@ public class Loan {
 		double totalPayment = getMonthlyPayment() * 12 * numberOfYears;
 		return totalPayment;
 	}
-	
+
 }

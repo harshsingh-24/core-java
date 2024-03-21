@@ -55,8 +55,8 @@ public class Circle extends GeometricObject {
 	// Overiding
 	
 	@Override
-	public String toString1() {
-		return "\n radius: " + radius;
+	public String toString() {
+		return "\n radius: " + radius + "\n Color: " + color;
 	}
 
 }

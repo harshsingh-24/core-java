@@ -1,4 +1,4 @@
-package oops;
+package oops2;
 
 public class TestBMI {
 

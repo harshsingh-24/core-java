@@ -1,11 +1,11 @@
-package oops;
+package oops2;
 
 public class Course {
-
-	// Data Fields - name, list of students, number of students
+	
+	// Data fields
 	private String courseName;
-	private String[] students = new String[100]; //null, null .. null
-	private int numberOfStudents; // 0
+	private String[] students = new String[100]; // null, null, null... null
+	private int numberOfStudents;     // 0 
 	
 	// Constructors
 	public Course(String courseName) {
@@ -25,13 +25,14 @@ public class Course {
 	public int getNumberOfStudents() {
 		return numberOfStudents;
 	}
-
 	// Methods
+	
 	public void addStudent(String student) {
 		students[numberOfStudents] = student;
 		numberOfStudents++;
 	}
 	
+	// remove one student from the array 
 	public void dropStudent(String student) {
 		// Exercise - one implementation
 		for (int i = 0; i < getNumberOfStudents(); i++) {
@@ -46,5 +47,5 @@ public class Course {
 		students[getNumberOfStudents() - 1] = null;
 		numberOfStudents--;
 	}
-
+	
 }

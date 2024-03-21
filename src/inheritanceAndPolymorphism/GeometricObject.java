@@ -7,7 +7,7 @@ import java.util.Date;
 public class GeometricObject {
 
 	// Data Fields
-	private String color = "white"; // by default 
+	protected String color = "white"; // by default 
 	private boolean filled; // by default - false
 	private Date dateCreated;
 	
@@ -49,7 +49,8 @@ public class GeometricObject {
 	
 	// Object: public String toString()
 	
-	public String toString1() {
+	@Override
+	public String toString() {
 		return "created on " + dateCreated + "\ncolor: " + color + 
 				" and filled: " + filled;
 	}

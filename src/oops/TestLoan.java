@@ -1,11 +1,14 @@
-package oops;
+package oops2;
 
 import java.util.Scanner;
+
+import oops.Loan;
 
 public class TestLoan {
 
 	public static void main(String[] args) {
-		
+		// TODO Auto-generated method stub
+
 		// Create a Scanner
 		Scanner input = new Scanner(System.in);
 		

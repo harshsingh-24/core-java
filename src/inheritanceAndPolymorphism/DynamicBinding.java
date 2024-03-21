@@ -1,48 +1,60 @@
 package inheritanceAndPolymorphism;
 
 public class DynamicBinding {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		m(new Object());
 		m(new Person());
 		m(new Student());
-		m(new GraduateStudent()); // Person, Student, Hex String
+		m(new GraduateStudent());
+		Person p = new Student(); 
+		System.out.println(" Method: " + p.CustomMethod());
+		System.out.println("Here: " + p.name); // Why is this happening?
 	}
-	
-	// short b = 4;
-	// Primitive Rule - int a = b; // Implicit Casting
-	// b = (short)a; // explicit casting
-	
-	// Object o = new Circle(); 
-	// Student s = (Student)o; // explicit casting
-	
-	// Polymorphism -> Actual Type ka method should be executed
-	public static void m(Object x) { // Object x = new Person()
-		System.out.println(x.toString()); // actual type
-		
-		// matching(declared type) - is decided at compile time
-		// binding(actual type) - is decided at runtime
+
+	public static void m(Object x) {
+		System.out.println(x.toString());
+		if(x instanceof Person) {
+			System.out.println(((Person)x).CustomMethod());
+		}
 	}
 
 }
 
-// Object <- Person <- Student <- GraduateStudent
-
 class GraduateStudent extends Student {
-	
+	@Override
+	public String toString() {
+		return "GraduateStudent";
+	}
+	@Override
+	public String CustomMethod() {
+		return "Custom Method";
+	}
 }
 
 class Student extends Person {
-	
+	String name="Student";
+	@Override
 	public String toString() {
 		return "Student";
 	}
+
+	@Override
+	public String CustomMethod() {
+		return "Custom Method of Student";
+
+	}
 }
 
-class Person extends Object {
+class Person {
+	String name="Person";
 
+	@Override
 	public String toString() {
 		return "Person";
+	}
+
+	public String CustomMethod() {
+		return "Custom Method";
+
 	}
 }
